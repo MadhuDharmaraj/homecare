@@ -22,6 +22,9 @@ public abstract class BaseEntity {
     @Column(nullable = false)
     private LocalDateTime updatedAt;
 
+    @Column(nullable = false)
+    private boolean deleted = false;
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
